@@ -6,6 +6,7 @@ You can use the function `create_branches` to create fakes branches to test the 
 ## How to create fake branches
 
 ```python
+# in main.py
 if __name__ == "__main__":
     create_branches()
 ```
@@ -13,6 +14,7 @@ if __name__ == "__main__":
 ## How to delete branches
 
 ```python
+# in main.py
 if __name__ == "__main__":
     branches_to_keep = [
         'main',
