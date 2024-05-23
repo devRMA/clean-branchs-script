@@ -63,6 +63,7 @@ def delete_branches(branches_to_keep: list[str] = ['main', 'master']) -> None:
     """
     branches = get_branches()
     deleted_branches = 0
+    default_branch = get_default_branch()
 
     for branch in branches:
         if branch not in branches_to_keep:
@@ -72,7 +73,7 @@ def delete_branches(branches_to_keep: list[str] = ['main', 'master']) -> None:
             except:
                 print(f"Failed to delete {branch} branch from origin")
             finally:
-                run_command(['git', 'switch', get_default_branch()])
+                run_command(['git', 'switch', default_branch])
             print(f"Deleted {branch} branch from origin")
             deleted_branches += 1
         
